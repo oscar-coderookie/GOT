@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-between align-items-center container-xl pb-5"style="height:15vh">
+  <app-searchbar (searchEmitter)="filterHouses($event)"></app-searchbar>
+  <app-header></app-header>
+</div>
+<ngx-simplebar style="height: 70vh">
+  <div class="father-container container-sm">
+    <div class="row">
+      <div class="c-flags col-12 col-md-6 col-lg-3 col-xl-2" *ngFor="let flag of flags | filter: inputText"
+        routerLink="/flags/{{flag.name}}">
+        <img onerror="this.src='./assets/images/escudo.png'"
+          class="c-flags__img" src="{{ flag.logoURL }}" alt="{{flag.name}}" />
+        <h2 class="c-flags__title">{{ flag.name }}</h2>
+      </div>
+    </div>
+  </div>
+</ngx-simplebar>

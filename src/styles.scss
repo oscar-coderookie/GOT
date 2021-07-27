@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~simplebar/dist/simplebar.css";
+
+/* font-family: "Game of Thrones"; */
+@import url(//db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones);
+/* font-family: 'Lato', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+* {
+  font-family: "Game of Thrones";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(https://cdn.custom-cursor.com/db/cursor/32/Game_of_ThronesLongclawSwordCursor.png),
+    default !important;
+}
+
+body {
+  background: black;
+}
+
+

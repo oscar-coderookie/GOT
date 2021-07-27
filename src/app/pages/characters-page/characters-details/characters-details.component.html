@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-between align-items-center container-xl pb-5" style="height:15vh">
+  <app-back-btn></app-back-btn>
+  <app-header></app-header>
+</div>
+
+<section class="c-main" *ngIf="character.age !== null && character.age.age !== undefined">
+  <section>
+    <div class="d-flex justify-content-center">
+      <img class="c-details__image" src="{{character.image}}" alt="" />
+    </div>
+    <div class="d-flex justify-content-center">
+      <h1 class="c-details__name">{{character.name}}</h1>
+    </div>
+  </section>
+
+  <section class="container-xl">
+    <div class="row">
+      <div class=" col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center mb-1">
+          <h2 class="c-div__title">Casa</h2>
+        </div>
+        <div>
+          <img class="c-main__houseFlag" routerLink="/flags/{{flag[0].name}}" src="{{flag[0].logoURL}}" alt="" />
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center mb-1">
+          <h2 class="c-div__title">Alianzas</h2>
+        </div>
+        <ngx-simplebar style="height: 150px">
+          <div>
+            <ul class="c-details__ul" *ngFor="let alliance of character.allegiances">
+              <li class="c-details__ul__li d-flex justify-content-center" routerLink="/flags/{{alliance}}">{{alliance}}
+              </li>
+            </ul>
+          </div>
+        </ngx-simplebar>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center mb-1">
+          <h2 class="c-div__title">Apariciones</h2>
+        </div>
+        <ngx-simplebar style="height: 150px">
+          <div>
+            <ul class="c-details__ul" *ngFor="let appearance of character.appearances">
+              <li class="c-details__ul__li d-flex justify-content-center">{{appearance}}</li>
+            </ul>
+          </div>
+        </ngx-simplebar>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center mb-1">
+          <h2 class="c-div__title">Padre</h2>
+        </div>
+        <div>
+          <ul class="c-details__ul">
+            <li class="c-details__ul__li d-flex justify-content-center" routerLink="/characters/{{character.father}}">
+              {{character.father}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center mb-1">
+          <h2 class="c-div__title">Hermanos</h2>
+        </div>
+        <ngx-simplebar style="height: 150px">
+          <div>
+            <ul class="c-details__ul" *ngFor="let sibling of character.siblings">
+              <li class="c-details__ul__li d-flex justify-content-center" routerLink="/characters/{{sibling}}">
+                {{sibling}}</li>
+            </ul>
+          </div>
+        </ngx-simplebar>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2 mb-4">
+        <div class="d-flex justify-content-center align-items-center">
+          <h2 class="c-div__title">Titulos</h2>
+        </div>
+        <ngx-simplebar style="height: 150px">
+          <div>
+            <ul class="c-details__ul" *ngFor="let title of character.titles">
+              <li class="c-details__ul__li d-flex justify-content-center">{{title}}</li>
+            </ul>
+          </div>
+        </ngx-simplebar>
+      </div>
+    </div>
+  </section>
+</section>

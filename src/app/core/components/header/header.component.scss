@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.uk {
+  object-fit: cover;
+
+  @include media-breakpoint-down(sm) {
+    width: 32px
+  }
+  &:hover {
+    object-fit: scale-down;
+  }
+}
+.c-home__language {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 250px;
+}
+.c-home__home {
+  width: 60px;
+  border:none;
+  @include media-breakpoint-down(sm) {
+  width: 24px
+  
+}
+
+}
+
+.spain {
+
+margin: 0px 10px;
+  @include media-breakpoint-down(sm) {
+    width: 32px;
+  }
+  &:hover {
+    object-fit: scale-down;
+    
+  }
+}
